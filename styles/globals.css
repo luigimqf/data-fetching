@@ -5,15 +5,17 @@
 }
 
 body{
-  width:100vw;
-  height:100vh;
-  background-color: var(--bg);
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: var(--color);
 
 
 }
 
 :root {
-  --bg: #dfe4ea;
+  --color: #dfe4ea;
   --primary: #58244D;
   --secondary: #332063;
 
