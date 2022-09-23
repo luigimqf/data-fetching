@@ -1,9 +1,10 @@
 import { NextPage } from "next";
-import React, { SetStateAction, useMemo } from "react";
+import React, { useMemo } from "react";
 import Search from "../../components/Characters/Search";
 import { ICharactersProps } from "../../interfaces/";
 import charactersService from "../../services/charactersService";
 import styles from "../../styles/Characters/Characters.module.css";
+import { getAnimationTime } from "../../utils/getAnimationTime";
 import { filterItemWithThumb, getThumb } from "../../utils/getThumb";
 
 
@@ -17,8 +18,14 @@ const Characters: NextPage<ICharactersProps> = ({characters}) => {
     .map((character,index) => {
       const thumb = getThumb(character);
       return (
-        <div className={styles.card} >
-        </div>
+        <div 
+          className={styles.card} 
+          style={{
+            backgroundImage: `url(${thumb})`,
+            animationDuration: `${getAnimationTime(index)}s`,
+            animationDelay: `${getAnimationTime(index)}s`
+          }}
+        />
       );
     });
   }, [characters, search]);
@@ -26,7 +33,7 @@ const Characters: NextPage<ICharactersProps> = ({characters}) => {
   return (
     <div className={styles.wrapper}>
       <Search setState={setSearch}/>
-      <div className={styles.characterWrapper}>
+      <div className={styles.charactersWrapper}>
         {renderCharacters}
       </div>
     </div>
