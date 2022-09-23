@@ -1,0 +1,20 @@
+*,*::after,*::before{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  width:100vw;
+  height:100vh;
+
+
+}
+
+:root {
+  --bg: #dfe4ea;
+  --primary: #58244D;
+  --secondary: #332063;
+
+  font-family: Roboto;
+}
