@@ -1,21 +1,18 @@
+import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ThemeProvider, DefaultTheme } from 'styled-components'
-import GlobalStyle from '../components/globalstyles'
+import Head from 'next/head'
 
-const theme: DefaultTheme = {
-  colors: {
-    primary: '#111',
-    secondary: '#0070f3',
-  },
-}
-
-export default function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
+  <>
+    <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Data Fetching</title>
+    </Head>
+    <Component {...pageProps} />
+  </>
   )
 }
+
+export default MyApp
+
