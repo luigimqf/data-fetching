@@ -1,0 +1,1 @@
+export const getAnimationTime = (index:number) => 1 + (index / 10);
