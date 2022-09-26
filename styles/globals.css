@@ -18,6 +18,8 @@ body{
   --color: #dfe4ea;
   --primary: #58244D;
   --secondary: #332063;
+  --bg2:#261121;
+  --bg:#121212;
 
   font-family: Roboto;
 }
